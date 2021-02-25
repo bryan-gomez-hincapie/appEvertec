@@ -339,6 +339,7 @@ public class generarPagoActivity extends AppCompatActivity {
                     etEmailPagador.setVisibility(View.VISIBLE);
                     s6.setVisibility(View.VISIBLE);
                 }
+
             }else{
                 Toast.makeText(getApplicationContext(), "Tarjeta no encontrada", Toast.LENGTH_LONG).show();
             }
