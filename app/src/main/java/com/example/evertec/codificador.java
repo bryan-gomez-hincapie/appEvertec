@@ -1,29 +1,16 @@
 package com.example.evertec;
 
-import android.os.Build;
 import android.util.Base64;
-import android.util.Log;
-
-import androidx.annotation.RequiresApi;
-
-import org.json.JSONException;
 
 import java.math.BigInteger;
-import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
-import java.net.UnknownHostException;
 import java.security.MessageDigest;
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.ZonedDateTime;
-import java.util.Collections;
 import java.util.Date;
 import java.util.Enumeration;
-import java.util.List;
-import java.util.Locale;
 
 public class codificador {
     public String nonce ="", dateString ="", base64Str = "", datoAleatorio = "";
@@ -128,13 +115,6 @@ public class codificador {
         return  dateString;
     }
 
-    public String fecha2(String zz){
-        DateFormat x = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date obj = new Date();
-        dateString = x.format(obj);
-        return  dateString;
-    }
-
     public String getIP() {
         String ip1 = "";
         String ip2 = "";
@@ -151,7 +131,7 @@ public class codificador {
                     InetAddress addr = addresses.nextElement();
                     ip1 = addr.getHostAddress();
                     ip2 += ip1 + ",";
-                    //System.out.println(iface.getDisplayName() + " UNOOOOOOOOO " + ip1);
+                    //System.out.println(iface.getDisplayName() + ip1);
                 }
             }
         } catch (SocketException e) {
@@ -165,5 +145,4 @@ public class codificador {
         ip2 = vect[5];
         return ip2;
     }
-
 }
